@@ -54,8 +54,8 @@
 </body>
 <script>
 	var lastPage= true;
-	//var token = SystemUtil.getUrlParam("token");
-	var token ='1fe47344-9af5-4112-a3d4-24a9adb6569a'
+	var token = SystemUtil.getUrlParam("token");
+	//var token ='1fe47344-9af5-4112-a3d4-24a9adb6569a'
 	// list ajax封装
 	function getList(pageNumber,pageSize,homeType,documentType){
 		var thisIndex = $(".sideTab .active").index('.sideTab .item')+1;
@@ -81,7 +81,7 @@
 					var source = $("#entry-template").html();
 					var template = Handlebars.compile(source);
 					var compileTemplate = template(myData[i]);
-					$('.searContentWrap').prepend(compileTemplate);
+					$('.searContentWrap').append(compileTemplate);
 				}
 				
 				$(".loading").css({'display':'none'});

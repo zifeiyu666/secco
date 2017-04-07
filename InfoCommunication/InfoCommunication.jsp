@@ -73,8 +73,8 @@
 	</script>
 	<!-- ajax -->
 	<script>
-		//var token = SystemUtil.getUrlParam("token");
-		var token = '1fe47344-9af5-4112-a3d4-24a9adb6569a'
+		var token = SystemUtil.getUrlParam("token");
+		//var token = '1fe47344-9af5-4112-a3d4-24a9adb6569a'
 		var lastPage= true;
 		// list ajax封装
 		function getList(pageNumber,pageSize,homeType,documentType){
@@ -104,7 +104,7 @@
 							var source = $("#entry-template").html();
 							var template = Handlebars.compile(source);
 							var compileTemplate = template(myData[i]);
-							$('.wrap0'+thisIndex).prepend(compileTemplate);
+							$('.wrap0'+thisIndex).append(compileTemplate);
 						}
 
 					}

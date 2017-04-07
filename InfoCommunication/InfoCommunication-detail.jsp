@@ -1,4 +1,6 @@
 <%@ page import="com.gushxue.jfs.utils.ServiceManager" %>
+<%@ page import="com.gushxue.common.date.DateFormatUtil" %>
+<%@ page import="java.util.Date" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -288,12 +290,12 @@
 
    		// 前台显示
    		// 通过token获取当前用户的信息
-   		var adminData={
-   			'userName':'admin',
-   			'department':'生产部',
-   			'comment':"",
-   			'createDate':'2017-3-9 14:17'
-   		}
+	   var adminData={
+		   'userName':'',
+		   'department':'',
+		   'comment':"",
+		   'createDate':'<%=DateFormatUtil.getLocalDate(new Date(System.currentTimeMillis()))%>'
+	   }
    		adminData.comment="<span style='color:red'>[待审批]</span>"+$('#searchWrap input').val();
    		// 编译评论html模板
         var source = $("#entry-template02").html();

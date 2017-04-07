@@ -140,17 +140,14 @@
 			<img width=428  src="../img/baoxiao@2x.png" alt="">
 			<h2>报销</h2>
 		</div>
-
 		<div class="list peixun">
 			<img width=247 src="../img/neibupeixun@2x.png" alt="">
 			<h2>内部培训</h2>
 		</div>
-
 		<div class="list qingjia">
 			<img width=428 src="../img/xiujiashenqing@2x.png" alt="">
 			<h2>休假申请</h2>
 		</div>
-
 		<div class="list bottom">
 			<img width=690 src="../img/ditu@2x.png" alt="">
 			<div class="item banche">
@@ -166,7 +163,8 @@
 				<h4>建议征集</h2>
 			</div>
 		</div>
-		
+
+
 	</div>
 </body>
 </html>

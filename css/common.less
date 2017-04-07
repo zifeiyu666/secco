@@ -1,0 +1,497 @@
+html,body,h1,h2,h3,h4,h5,h6,ul,li{
+	margin:0;
+	padding:0;
+}
+html{
+	background: #f0f0f0;
+}
+.navBar{
+	background: #fff;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	font-family: "微软雅黑" !important;
+}
+.myHide{
+	display:none;
+}
+// LOADING
+.loading{
+	position:fixed;
+	bottom:30px;
+	text-align: center;
+	height:20px;
+	width:100%;
+	display:none;
+}
+// lastPage
+.lastPage{
+	h6{
+		font-size: 14px;
+		text-align: center;
+		line-height: 40px;
+		font-weight: normal;
+		color:#999;
+		background: #f0f0f0;
+	}
+	
+}
+.loading img{
+	display:inline-block;
+	opacity:0.7;
+}
+// header
+.header{
+	background:#000;
+	height:45px;
+	position:fixed;
+	left:0;
+	top:0;
+	text-align: center;
+	width:100%;
+	z-index: 100;
+	.backBtn{
+		position:absolute;
+		left:20px;
+		line-height: 45px;
+		color:#fff;
+		font-size: 16px;
+	}
+	.listBtn{
+		position:absolute;
+		right:20px;
+		line-height: 45px;
+		color:#fff;
+		font-size: 16px;
+	}
+	.indexBtn{
+		position:absolute;
+		left:20px;
+		line-height: 45px;
+		color:#fff;
+		font-size: 16px;
+	}
+	h1{
+		font-size:22px;
+		color:#fff;
+		line-height: 45px;
+		font-weight: normal;
+	}
+	
+}
+
+/*main*/
+.main{
+	margin-bottom:84px;
+	background:#f0f0f0;
+	.title{
+		margin:20px 0;
+		text-align: center;
+		h2{
+			display:inline-block;
+			color:#666;
+			font-size: 16px;
+			line-height: 20px;
+			padding-bottom:6px;
+			margin-right:60px;
+			border-bottom: 3px solid #666;
+		}
+		span{
+			display:inline-block;
+			color:#666;
+			font-size: 16px;
+			line-height: 20px;
+			position:relative;
+			top:4px;
+			padding-left:25px;
+			background: url('../img/shijianicon@2x.png') no-repeat 0 0;
+			background-size: 20px 20px;
+
+		}
+	}
+	.listItem{
+		text-align: center;
+		margin-bottom:20px;
+		overflow: hidden;
+		background: #fff;
+		h1{
+			padding:20px 40px;
+			font-size: 20px;
+			line-height: 30px;
+			color:#333;
+			font-weight: 500;
+		}
+		
+		
+	}
+}
+
+// footer
+.footer{
+	height: 50px;
+	overflow: hidden;
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	border-top:1px solid #e5e5e5;
+	background: #fff;
+	z-index: 300;
+}
+
+
+
+/*底部功能菜单*/
+.myBtn{
+	width: 100%;
+	position:fixed;
+	bottom:50px;
+	height:0;
+	left:0;
+	background: #fff;
+	padding-top:5px;
+}
+.btnList{
+	margin-bottom:5px;
+}
+.bottomMask, .maskAdd{
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index: 50;
+	background: rgba(0,0,0,0.4);
+	display:none;
+}
+
+/*分割线*/
+.line{
+	border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    padding-top:10px;
+    margin:1px;
+}
+
+/*模态窗样式*/
+.modalModule{
+	width: 100%;
+	height: 0;
+	overflow: auto;
+	position:fixed;
+	left:0;
+	bottom:0;
+	z-index: 500;
+	background: #fff;
+}
+.modalModule .modalTitle{
+	background:#fff;
+	border-bottom:1px solid #e5e5e5;
+}
+.modalModule .modalTitle h1{
+	color:#333;
+	font-weight: bold;
+	font-size:18px;
+	line-height: 45px;
+	text-align: center;
+}
+.modalModule .modalTitle .modalClose{
+	color:#333;
+	position:absolute;
+	left:15px;
+	top:15px;
+	font-size: 16px;
+}
+
+// 媒体对象
+.media-heading{
+	font-size: 14px;
+	line-height: 20px;
+}
+.media_navHeading{
+	font-size: 14px;
+	color:#666;
+	line-height: 15px;
+}
+.media_info{
+	line-height: 15px;
+	font-size: 12px;
+	color:#999;
+	margin-top:10px;
+}
+// 文章详情
+.detail{
+	margin-top:20px;
+	padding:0 10px 10px 10px ;
+	background: #fff;
+	.detail_header{
+		background: #fff;
+		padding:20px 10px;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+		h2{
+			font-size: 20px;
+		    font-weight: bold;
+		    line-height: 30px;
+		    padding: 0 40px;
+		    margin-bottom: 15px;
+		}
+		span{
+			font-size: 14px;
+		    line-height: 20px;
+		    color:#666;
+		}
+	}
+	.detail_body{
+		h4{
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 40px;
+			padding-top:10px;
+		}
+		p{
+			overflow-y: hidden;
+			width:100%;
+		}
+		div{
+			padding:20px 10px 10px 10px ;
+			font-size: 16px;
+			line-height: 23px;
+			color:#666;
+			text-indent: 2em;
+			img{
+				width:100%;
+				position: relative;
+				left:-25px;
+				display: inline-block;
+			}
+		}
+
+		
+	}
+}
+
+.zan{
+	text-align: center;
+	margin-bottom:20px;
+	.zanWrap{
+		display: inline-block;
+		margin-top:30px;
+		background: #ff9900;
+		height:40px;
+		width:90px;
+		border-radius: 20px;
+		text-align: center;
+		line-height: 40px;
+		color:#fff;
+		font-size: 16px;
+		img{
+			margin-right:10px;
+			position:relative;
+			top:-2px;
+		}
+	}
+	h4{
+		margin-top:10px;
+		color:#666;
+		font-size: 14px;
+		position:relative;
+		left:6px;
+	}
+	
+}
+
+// 副导航
+.navBar{
+	position: relative;
+	height:50px;
+	text-align: center;
+	box-shadow: 1px 1px 2px #ccc;
+	h1{
+		font-size: 20px;
+		line-height: 50px;
+		font-weight: bold;
+		color:#333;
+	}
+	.left{
+		position: absolute;
+	    left: 10px;
+	    top:14px;
+
+	}
+	.ListIcon{
+		position: absolute;
+		display:inline-block;
+		width:25px;
+		height:30px;
+		left:10px;
+		top:17px;
+		background: url(../img/fenllei@2x.png) no-repeat 0 0;
+		background-size: 25px 
+	}
+	.SearchIcon{
+		position: absolute;
+		display:inline-block;
+		width:25px;
+		height:30px;
+		right:10px;
+		top:15px;
+		background: url(../img/sousuo@2x.png) no-repeat 0 0;
+		background-size: 22px ;
+	}
+}
+// 搜索框
+.searchWrap{
+	padding:10px 50px 0px 10px;
+	position:relative;
+
+	span{
+		position: absolute;
+		right:20px;
+		top:10px;
+		font-size: 18px;
+		color:#666;
+		line-height: 34px;
+	}
+}
+
+// 侧边栏
+.sideTab{
+	width:100%;
+	height:100%;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 1000;
+	display:none;
+	.sideBarMask{
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		background: #000;
+		opacity:0.5;
+	}
+	.sideTabWrap{
+		background: #dfdfdf;
+		position: absolute;
+		height:100%;
+		top:0;
+		left:-50%;
+		width:50%;
+		padding:30px 0px;
+		z-index: 100;
+		.item{
+			font-size: 16px;
+			color:#666;
+			background: #fff;
+			padding:10px 20px;
+			margin-bottom:5px;
+			div{
+				line-height: 25px;
+				padding-left:60px;
+				position: relative;
+				img{
+					position:absolute;
+					left:15px;
+					top:2px;
+				}
+				background: url(../img/fenleixian@2x.png) no-repeat 0 0;
+				background-size: 3px;
+			} 
+		}
+	}
+	
+}
+
+// searchPage
+.searchPage{
+	width:100%;
+	height:100%;
+	position: fixed;
+	top:0;
+	right:100%;
+	background: #f0f0f0;
+	.navBar{
+		background: #fff;
+	}
+	.backBtn{
+		position: absolute;
+		display:inline-block;
+		width:25px;
+		height:30px;
+		left:10px;
+		top:15px;
+		background: url(../img/fanhui@2x.png) no-repeat 0 0;
+		background-size: 12px ;
+		z-index:100;
+	}
+	.searchWrap{
+		padding-left:40px;
+		padding-right:10px;
+		position:relative;
+		input{
+			display:block;
+			border-radius: 20px;
+			height:35px;
+			border:1px solid #ccc;
+			width:100%;
+			position:relative;
+			top:-3px;
+			padding-left:20px;
+		}
+		.SearchIcon{
+			position:absolute;
+			right:20px;
+			height:25px;
+			width:40px;
+			top:12px;
+			border-left:1px solid #ccc;
+			background: url(../img/sousuo-icon.png) no-repeat 10px 0;
+			background-size: 22px ;
+		}
+
+	}
+	.searchContent{
+
+			padding:20px;
+			margin-top:10px;
+			background: #fff;
+			position:relative;
+			text-align: center;
+			.searchItem{
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				border:1px solid #ccc;
+				padding:30px;
+			}
+			.title{
+				background: #fff;
+				font-size: 16px;
+				font-weight: bold;
+				color:#666;
+				position:relative;
+				top:8px;
+				padding:0 4px;
+			}
+			.time{
+				background: #fff;
+				font-size: 14px;
+				color:#666;
+				position: relative;
+				bottom:10px;
+				padding:0 4px;
+			}
+
+
+		}
+}
+
+
+
+
+

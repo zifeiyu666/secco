@@ -74,6 +74,10 @@
 			font-size: 12px;
 			padding:0 10px;
 		}
+		.loading{
+			bottom: 50px;
+			z-index: 100;
+		}
 	</style>
 	<!--详情 handlebar 模板 -->
 	<script id="entry-template" type="text/x-handlebars-template"> 
@@ -128,7 +132,8 @@
 		// 获取前一页面的list ID；
 		var myId = GetQueryString("id");
 		console.log(myId);
-		var token = SystemUtil.getUrlParam("token");
+		//var token = SystemUtil.getUrlParam("token");
+		var token = '6c6dfcb0-7c57-4e50-a2f8-94ac625df3a8';
 		$(function(){
 			// 获取详情
 			jQuery.ajax({
@@ -164,20 +169,22 @@
 					}
 		            if(data.canComment == 1){
 		            	// 获取评论内容
+		            	var lastPage= true;
+		            	var pageSize=20,pageNumber=1;
+
+		            	
 		            	jQuery.ajax({
-			                url: "${ctx}/api/v1/comments?thirdPartId="+myId+"&thirdPartType="+data.type,   // 提交的页面
+			                url: "${ctx}/api/v1/comments?thirdPartId="+myId+"&thirdPartType="+data.type+"&pageSize="+pageSize+"&pageNumber="+pageNumber,   // 提交的页面
 			                contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 			                headers: {'authentication':token},
 			                type: "GET",                   // 设置请求类型为"POST"，默认为"GET"
 			                async:true,
 			                error: function(request) {      // 设置表单提交出错
-			                    // $.jGrowl('审核失败.', { sticky: true, theme: 'growl-error', header: 'Error!' });
+			                    console.log('error');
 			                },
 			                success: function(data) {
-			                    // $.jGrowl('审核成功.', { sticky: true, theme: 'growl-success', header: 'Success!' });
-			                    // location.reload();
 			                    console.log('success');
-			                    console.log(data);
+			                    console.log("data.content:"+data.content);
 			                    var myData = data.content;
 			                    // 编译评论html模板
 			                    var source = $("#entry-template02").html();
@@ -189,9 +196,69 @@
 			                    		$(".disWrap").append(compileTemplate);
 				                    }
 			                    }
+
+			                    lastPage = data.lastPage;
+
+			                    // 隐藏加载动画
+			                    $(".loading").css({'display':'none'});
 			                    
 					        }
 			            });
+			            $(window).scroll(function () {
+			            	var scrollTop = $(this).scrollTop();
+						       //页面高度
+						    var scrollHeight = $(document).height();
+						        //浏览器窗口高度
+						    var windowHeight = $(this).height();
+
+		            		//最后一页提醒()
+							if(this.lastPage){
+								if($('.lastPage').length==0){
+									var lastTips = "<div class='lastPage'><h6>没有更多内容了...</h6></div>";
+									$('body').append(lastTips)
+								}
+								
+								return;
+							}
+							// 翻页
+							if (scrollTop + windowHeight == scrollHeight) {
+						       pageNumber++;
+
+						       $(".loading").css({'display':'block'});
+						       jQuery.ajax({
+					                url: "${ctx}/api/v1/comments?thirdPartId="+myId+"&thirdPartType="+data.type+"&pageSize="+pageSize+"&pageNumber="+pageNumber,   // 提交的页面
+					                contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+					                headers: {'authentication':token},
+					                type: "GET",                   // 设置请求类型为"POST"，默认为"GET"
+					                async:true,
+					                error: function(request) {      // 设置表单提交出错
+					                    // $.jGrowl('审核失败.', { sticky: true, theme: 'growl-error', header: 'Error!' });
+					                },
+					                success: function(data) {
+					                    // $.jGrowl('审核成功.', { sticky: true, theme: 'growl-success', header: 'Success!' });
+					                    // location.reload();
+					                    console.log('success');
+					                    console.log(data);
+					                    var myData = data.content;
+					                    // 编译评论html模板
+					                    var source = $("#entry-template02").html();
+				            			var template = Handlebars.compile(source);
+				            			// 加载评论内容
+					                    if(myData.length!=0){
+					                    	for( var i=0; i<myData.length; i++){
+					                    		var compileTemplate = template(myData[i]);
+					                    		$(".disWrap").append(compileTemplate);
+						                    }
+					                    }
+
+					                    // 隐藏加载动画
+					                    $(".loading").css({'display':'none'});
+					                    
+							        }
+					            });
+
+						    }
+		            	})
 		            }
 		        }
             });
@@ -238,6 +305,10 @@
 			</div>
 			
 		</div>
+	</div>
+
+	<div class="loading">
+		<img src="../img/loading.gif">
 	</div>
 
 </body>

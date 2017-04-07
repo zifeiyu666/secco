@@ -73,8 +73,8 @@
 	</script>
 	<!-- ajax -->
 	<script>
-		var token = SystemUtil.getUrlParam("token");
-		//var token = '1fe47344-9af5-4112-a3d4-24a9adb6569a'
+		//var token = SystemUtil.getUrlParam("token");
+		var token = '6c6dfcb0-7c57-4e50-a2f8-94ac625df3a8'
 		var lastPage= true;
 		// list ajax封装
 		function getList(pageNumber,pageSize,homeType,documentType){

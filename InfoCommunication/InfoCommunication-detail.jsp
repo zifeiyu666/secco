@@ -78,6 +78,9 @@
 			bottom: 50px;
 			z-index: 100;
 		}
+		.lastPage{
+			margin-bottom: 50px;
+		}
 	</style>
 	<!--详情 handlebar 模板 -->
 	<script id="entry-template" type="text/x-handlebars-template"> 
@@ -133,7 +136,7 @@
 		var myId = GetQueryString("id");
 		console.log(myId);
 		//var token = SystemUtil.getUrlParam("token");
-		var token = '6c6dfcb0-7c57-4e50-a2f8-94ac625df3a8';
+		var token = '31758dee-d7ce-4f71-aaa8-254c4fa9e7b3';
 		$(function(){
 			// 获取详情
 			jQuery.ajax({
@@ -212,7 +215,7 @@
 						    var windowHeight = $(this).height();
 
 		            		//最后一页提醒()
-							if(this.lastPage){
+							if(lastPage){
 								if($('.lastPage').length==0){
 									var lastTips = "<div class='lastPage'><h6>没有更多内容了...</h6></div>";
 									$('body').append(lastTips)
